@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+    <title>Introducción a CSS</title>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <header>
+            Introducción a CSS
+        </header>
+
+        <ul>
+            <li><a class="nav-link" href="#que_Es_CSS">¿Qúe es CSS?</a></li>
+            <li><a class="nav-link" href="#sintaxis">Sintaxis</a></li>
+            <li><a class="nav-link" href="#CSS_Basico">CSS Básico</a></li>
+            <li><a class="nav-link" href="#CSS_Flexbox">CSS Flexbox</a></li>
+            <li><a class="nav-link" href="#Propiedades_De_CSS_Flexbox">Propiedadesde CSS Flexbox</a></li>
+            <li><a class="nav-link" href="#documentacion">Documentación</a></li>
+        </ul>
+
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="que_Es_CSS">
+            <header>¿Qúe es CSS?</header>
+                <p>CSS (Hojas de Estilo en Cascada) es el código que usas para dar estilo a tu página web. CSS Básico te lleva a través de lo que tú necesitas para empezar. Contestará a preguntas del tipo: ¿Cómo hago mi texto rojo o negro? ¿Cómo hago que mi contenido se muestre en tal y tal lugar de la pantalla? ¿Cómo decoro mi página web con imágenes de fondo y colores?</p>
+                <p><h3>Entonces ¿Qué es CSS, realmente?</h3>
+                    Como HTML, CSS (<em>Cascading Style Sheets</em>) u Hojas de estilo en cascada en español, no es realmente un lenguaje de programación. Es un lenguaje de hojas de estilo, es decir, te permite aplicar estilos de manera selectiva a elementos en documentos HTML.</p>
+                <p>A tener en cuenta</p>
+                    <ul>
+                    <li>CSS describe cómo se mostrarán los elementos HTML en pantalla, papel o en otros medios.</li>
+                    <li>CSS ahorra mucho trabajo. Puede controlar el diseño de varias páginas web a la vez.</li>
+                    <li>Las hojas de estilo externas se almacenan en archivos CSS.</li>
+                </ul>
+        </section>
+
+        <section class="main-section" id="sintaxis">
+            <header>Sintaxis</header>
+            <code>
+                SELECTOR {
+                    PROPIEDAD: VALOR DE LA PROPIEDAD
+                }
+
+                /* Al conjunto de PROPIEDAD y VALOR DE LA PROPIEDAD se le llama DECLARACIÓN */
+            </code>
+                <p class="codeInText">Si desea cambiar el color del texto de algún elemento de HTML, para el ejemplo el elemento<code>p</code>, se debe escribir lo siguiente en el archivo CSS:</p>
+                <code>
+                    p {
+                        color: red;
+                    }
+                </code>
+                <p class="codeInText">Tambien se le pueden dar estilos a los elementos al llamarlos por su <code>id</code></p>
+                <p>Veamos el codigo HTML</p>
+                <code>
+                    &lt;div id="cssBasico"&gt;
+                        &lt;!-- Aca va el contenido del elemento --&gt;
+                    &lt;/div&gt;
+                </code>
+                <p>En el CSS se llamaría de la siguiente manera:</p>
+                <code>
+                    #cssBasico{
+                        /* Aca van las declaraciones */
+                    }
+                </code>
+                <p>También se pueden seleccionar varios elementos y aplicar una sola regla a todos ellos. Incluye varios selectores separados por comas (,). Por ejemplo:</p>
+                <code>
+                    p,li,h1 {
+                        color: red;
+                    }
+                </code>
+        </section>
+
+        <section class="main-section" id="CSS_Basico">
+            <header>CSS Básico</header>
+            <p>Lo primero que se debe hacer, es crear un archivo .css en el proyecto que se este realizando.</p>
+            <p class="codeInText">Luego de crear el archivo .css, este se debe linkear en el <code>head</code>de la siguiente manera:</p>
+            <code>
+                &lt;link href="styles/style.css" rel="stylesheet" type="text/css"&gt;
+            </code>
+            <p>Debe quedar semejante al siguiente código</p>
+            <code>
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;link rel="stylesheet" href="./css/styles.css" type="text/css"&gt;
+                    &lt;title&gt;Introducción a CSS&lt;/title&gt;
+                &lt;/head&gt;
+            </code>
+        </section>
+
+        <section class="main-section" id="CSS_Flexbox">
+            <header>CSS Flexbox</header>
+                <p>El Flexbox (Caja flexible) facilita el diseño de una estructura de diseño flexible y receptiva sin usar flotación o posicionamiento.</p>
+                <p><h3>display</h3>Esto define un contenedor flexible; en línea o en bloque según el valor dado. Permite un contexto flexible para todos sus hijos directos.</p>
+                <code>
+                    .container {
+                        display: flex; /* o inline-flex */
+                    }
+                </code>
+                <p><h3>flex-direction</h3>Esto establece el eje principal, definiendo así la dirección en que se colocan los elementos flexibles en el contenedor flexible. Flexbox es (aparte de la envoltura opcional) un concepto de diseño de una sola dirección. Piense en los elementos flexibles como distribuidos principalmente en filas horizontales o columnas verticales.</p>
+                <code>
+                    .container {
+                        flex-direction: row | row-reverse | column | column-reverse;
+                    }
+                </code>                
+        </section>
+
+        <section class="main-section" id="Propiedades_De_CSS_Flexbox">
+            <header>Propiedades de CSS Flexbox</header>
+            <ul>
+                <li>display: Especifica el tipo de cuadro utilizado para un elemento HTML.</li>
+                <li>flex-direction: Especifica la dirección de los elementos flexibles dentro de un contenedor flexible.</li>
+                <li>justify-content: Alinea horizontalmente los elementos flexibles cuando los elementos no utilizan todo el espacio disponible en el eje principal.</li>
+                <li>align-items: Alinea verticalmente los elementos flexibles cuando los elementos no utilizan todo el espacio disponible en el eje transversal.</li>
+                <li>flex-wrap: Especifica si los elementos flexibles deben ajustarse o no, si no hay suficiente espacio para ellos en una línea flexible.</li>
+                <li>align-content: Modifica el comportamiento de la propiedad flex-wrap. Es similar a alinear elementos, pero en lugar de alinear elementos flexibles, alinea líneas flexibles.</li>
+                <li>flex-flow: Una propiedad abreviada para flex-direction y flex-wrap.</li>
+                <li>order: Especifica el orden de un artículo flexible en relación con el resto de los artículos flexibles dentro del mismo contenedor.</li>
+                <li>align-self: Se usa en artículos flexibles. Anula la propiedad align-items del contenedor.</li>
+                <li>flex: Una propiedad abreviada para las propiedades flex-grow, flex-shrink y flex-base</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="documentacion">
+            <header>Documentación</header>
+            <ul>
+                <li>
+                    Parte de la documentación de esta página la encuentras en
+                    <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/CSS_basics" target="_blank">MDN web docs</a>
+                </li>
+                <li>
+                    Para más información, también puedes consultar
+                    <a href="https://www.w3schools.com/css/" target="_blanck">W3Schools</a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+    
+</body>
+
+</html>
